@@ -1,2 +1,8 @@
 # D3plusR
-A package for d3plus in R
+A package for D3plus in R
+
+## Install
+
+```
+devtools::install_github('paulofelipe/D3plusR')
+```
