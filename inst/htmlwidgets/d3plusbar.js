@@ -12,33 +12,6 @@ HTMLWidgets.widget({
     return{
       renderValue: function(x){
         
-        function number_format(number, params){
-          if ($.inArray(params.key, currency_var) !== -1) {
-              if (Math.abs(number) >= 2e9){
-                return currency + " " + d3plus.number.format(number/1e9, params) + " "  + number_text[4];
-              }
-              else if(Math.abs(number) >= 1e9){
-                return currency + " "  + d3plus.number.format(number/1e9, params) + " "  + number_text[3];  
-              }
-              else if (Math.abs(number) >= 2e6){
-                return currency + " "  + d3plus.number.format(number/1e6, params) + " "  + number_text[2];  
-              }
-              else if(Math.abs(number) >= 1e6){
-                return currency + " "  + d3plus.number.format(number/1e6, params) + " "  + number_text[1];  
-              }
-              else if(Math.abs(number) >= 1e3){
-                return currency + " "  + d3plus.number.format(number/1e3, params) + " "  + number_text[0];  
-              }
-              else {
-                return currency + " "  + number;  
-              }
-          } else if($.inArray(params.key, part_var) !== -1){
-            return d3plus.number.format(number, params) + "%";
-          } else {
-            return d3plus.number.format(number, params);
-          }
-      }
-      
         var data = HTMLWidgets.dataframeToD3(x.data);
         var axisx = x.settings.x;
         var axisy = x.settings.y;
