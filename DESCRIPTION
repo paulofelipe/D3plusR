@@ -1,0 +1,15 @@
+Package: D3plusR
+Type: Package
+Title: Create D3plus visualizations
+Version: 0.0.1
+Date: 2016-08-29
+Authors@R: as.person(c(
+    "Paulo Alencar <paulofel2011@gmail.com> [aut, cre]", 
+    "Saulo Guerra <saulo.guerra@gmail.com> [aut]"
+  ))
+Maintainer: Paulo Alencar <paulofel2011@gmail.com>
+Description: A R interface for D3plus javascript library.
+License: MIT
+Imports:
+    htmlwidgets
+RoxygenNote: 5.0.1

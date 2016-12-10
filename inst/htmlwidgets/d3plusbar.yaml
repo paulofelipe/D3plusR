@@ -1,0 +1,8 @@
+# (uncomment to add a dependency)
+ dependencies:
+  - name: d3plus
+    version: 1.9.6
+    src: htmlwidgets/lib/d3plus.v1.9.6
+    script:
+        - d3.min.js
+        - d3plus.min.js
