@@ -10,8 +10,6 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
 ## First Example
 
 The data for first example comes from the Comtrade API. By default, the D3plus library adds the symbol `%` to variables named `share`. To include this symbol in other variables use the `percent_var` argument.
