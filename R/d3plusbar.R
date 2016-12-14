@@ -25,26 +25,58 @@
 #' @param scaley a name indicating the scale type for the y axis (log, linear, discrete and share).
 #' @param scalex a name indicating the scale type for the x axis (log, linear, discrete and share).
 #' @param legend_data a logical value indicating if the legend's tooltips should show some data summaries.
+#' @param legend_size a number indicating the size of legend box.
 #' @param currency a name indicating the currency symbol (US$, R$, etc.).
 #' @param number_text a name to show after the number. In portuguese: c("Mil", "Milhão", "Milhões", "Bilhão", "Bilhões").
 #' @param currency_var a vector with variable names to apply the currency format.
-#' @param part_var a vector with variable names to apply the share format.
+#' @param percent_var a vector with variable names to apply the share format.
 #' @param locale a name indicating the language to be used
-#' @param width a number (in pixels) or percent text ("100%") indicating the visualization's width.
-#' @param height a number (in pixels) or percent text ("100%") indicating the visualization's height.
+#' @param dictionary a named list. The element's name should be the original text and the value should be the new text.
+#' @param width a number (in pixels) or percent text ("100\%") indicating the visualization's width.
+#' @param height a number (in pixels) or percent text ("100\%") indicating the visualization's height.
 #' @param elementId a name for the visualization's ID.
-#'  
+#' 
 #' @export
-#' @examples 
+#' @examples #' 
+#' library(D3plusR)
+#' library(dplyr)
+#' data("trade_bra_chn")
+
+#' # Fake shares
+#' trade_bra_chn <- trade_bra_chn %>% 
+#'   mutate(share = sample(100, nrow(trade_bra_chn), replace = TRUE))
+
+#' dictionary <- list(TradeValue = "Trade Value", Period = "Year",
+#'                    share = "Share")
+
+#' attributes <- list(Trade.Flow = data.frame(Trade.Flow = c("Export", "Import"),
+#'                                            hex = c("#344969", "#992234")))
+
+#' d3plusbar(data = trade_bra_chn,
+#'           x = "Period",
+#'           y = "TradeValue",
+#'           id = "Trade.Flow",
+#'           tooltip = c("Period", "TradeValue", "share"),
+#'           xtime = TRUE,
+#'           height = 400,
+#'           width = "100%",
+#'           title = "Brazilian Exports and Imports to/from China",
+#'           currency_var = "TradeValue",
+#'           dictionary = dictionary,
+#'           attributes = attributes,
+#'           elementId = 'viz1')
+#' 
 #' 
 d3plusbar <- function(data, x, y, id = NULL, xlabel = FALSE, ylabel = FALSE,
                       title = FALSE, xtime = FALSE, attributes = NULL,
                       gridx = FALSE, gridy = TRUE, filters = TRUE,
                       background_color = "#FFFFFF", width_panel = 0, legend = TRUE,
-                      stackedy = c(FALSE, FALSE), stackedx = c(FALSE, FALSE),
-                      scaley = "linear", scalex = "discrete", legend_data = FALSE,
+                      tooltip = NULL, stackedy = c(FALSE, FALSE),
+                      stackedx = c(FALSE, FALSE), scaley = "linear",
+                      scalex = "discrete", legend_data = FALSE, legend_size = 20,
                       currency = "US$", number_text = c("K", "M", "M", "B", "B"),
-                      currency_var = NULL, part_var = NULL, locale = "pt_BR",
+                      currency_var = NULL, percent_var = NULL, locale = "en_US",
+                      dictionary = NULL,
                       width = NULL, height = NULL, elementId = NULL) {
 
     if(is.null(attributes)){
@@ -62,6 +94,7 @@ d3plusbar <- function(data, x, y, id = NULL, xlabel = FALSE, ylabel = FALSE,
         title = title,
         xtime = ifelse(xtime, x, ""),
         legend = legend,
+        tooltip = jsonlite::toJSON(tooltip),
         gridx = gridx,
         gridy = gridy,
         filters = filters,
@@ -72,10 +105,13 @@ d3plusbar <- function(data, x, y, id = NULL, xlabel = FALSE, ylabel = FALSE,
         scaley = scaley,
         scalex = scalex,
         legend_data = legend_data,
+        legend_size = legend_size,
         currency = currency,
         number_text = number_text,
         currency_var = currency_var,
-        locale = locale
+        percent_var = percent_var,
+        locale = locale,
+        dictionary = jsonlite::toJSON(dictionary)
     )
 
     # forward options using x

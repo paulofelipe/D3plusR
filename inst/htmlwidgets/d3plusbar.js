@@ -1,6 +1,3 @@
-
-
-
 HTMLWidgets.widget({
   name: 'd3plusbar',
 
@@ -23,6 +20,7 @@ HTMLWidgets.widget({
         var xtime = x.settings.xtime;
         var attributes = x.attributes;
         var legend = x.settings.legend;
+        var tooltip_vars = x.settings.tooltip;
         var gridx = x.settings.gridx;
         var gridy = x.settings.gridy;
         var filters = x.settings.filters;
@@ -33,15 +31,16 @@ HTMLWidgets.widget({
         var scaley = x.settings.scaley;
         var scalex = x.settings.scalex;
         var legend_data = x.settings.legend_data;
+        var legend_size = x.settings.legend_size;  
         var currency = x.settings.currency;
         var number_text = x.settings.number_text;
         var currency_var = x.settings.currency_var;
+        var percent_var = x.settings.percent_var;
         var depth = 0;
         var locale = x.settings.locale;
+        var dictionary = x.settings.dictionary;
         var newId = el.id;
 
-        console.log(stackedy[0]);
-        
         d3plus_viz
         .data(data)
         .type("bar")
@@ -62,7 +61,7 @@ HTMLWidgets.widget({
             //"persist": {"position": true},
             "scale": scalex
         })
-        .tooltip([axisx])
+        .tooltip(tooltip_vars)
         .title(title)
         .format({"locale": locale})
         .time({"value": xtime})
@@ -75,7 +74,7 @@ HTMLWidgets.widget({
         .legend({
             "value": legend,
             "data": legend_data,
-            "size": 30,
+            "size": legend_size,
             "filters": filters,
             "order": {
                 "sort": "asc",
@@ -88,8 +87,14 @@ HTMLWidgets.widget({
         } else {
           d3plus_viz.order({"value": axisy, "sort": "desc"});
         }
+        if(currency_var === null){
+          currency_var = [];
+        }
         
-        if(currency_var !== null){
+        if(percent_var === null){
+          percent_var = [];
+        }
+        
           d3plus_viz
           .format({"number": function(number, params){
             if (currency_var.indexOf(params.key) > - 1) {
@@ -111,13 +116,27 @@ HTMLWidgets.widget({
               else {
                 return currency + " "  + number;  
               }
-            } else if(part_var.indexOf(params.key) > - 1){
+            } else if(percent_var.indexOf(params.key) > - 1){
               return d3plus.number.format(number, params) + "%";
             } else {
               return d3plus.number.format(number, params);
             }
           }});
+          
+        if(dictionary){
+          d3plus_viz
+          .format({"text": function(text) {
+            if (dictionary[text]) {
+              return dictionary[text];
+            }
+            else {
+              return text;
+            }
+          }
+        });
         }
+        
+        console.log(attributes[id[0]][0].hex);
         
         if(attributes){
             d3plus_viz
