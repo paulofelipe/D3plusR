@@ -26,5 +26,3 @@ d3plus(data = trade_bra_chn, id = "Trade.Flow",
   d3plusColor(value = "hex") %>% 
   d3plusIcon(value = "icon", style = "knockout")
 
-
-

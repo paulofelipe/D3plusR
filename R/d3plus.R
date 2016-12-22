@@ -1,13 +1,37 @@
-#' <Add Title>
+#' Create D3plus charts in R
 #'
-#' <Add Description>
+#' A function to initialize a D3plus chart in R
+#'
+#' @param data a data.frame object to create the visualization.
+#' @param type a name indicating the type of the chart.
+#' @param id a vector with the id's column names.
+#' @param title title of the visualization. If false, no title is displayed.
+#' @param currency a name indicating the currency symbol (US$, R$, etc.).
+#' @param number_text a name to show after the number. In portuguese: c("Mil", "Milhão", "Milhões", "Bilhão", "Bilhões").
+#' @param currency_var a vector with variable names to apply the currency format.
+#' @param percent_var a vector with variable names to apply the share format.
+#' @param locale a name indicating the language to be used
+#' @param dictionary a named list. The element's name should be the original text and the value should be the new text.
+#' @param width a number (in pixels) or percent text ("100\%") indicating the visualization's width.
+#' @param height a number (in pixels) or percent text ("100\%") indicating the visualization's height.
+#' @param elementId a name for the visualization's id.
 #'
 #' @import htmlwidgets
 #'
 #' @export
-d3plus <- function(data = data, type = "bar",  id = NULL, title = FALSE, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
+d3plus <- function(data = data,
+                   type = c("tree_map", "bar", "line", "scatter", "geo_map",
+                            "stacked", "radar", "sankey", "rings", "network",
+                            "box"),
+                   id = NULL, title = FALSE, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
                    currency_var = NULL, percent_var = NULL, locale = "en_US",
                    dictionary = NULL, width = NULL, height = NULL, elementId = NULL) {
+  
+  if(!type %in% c("tree_map", "bar", "line", "scatter", "geo_map",
+                  "stacked", "radar", "sankey", "rings", "network",
+                  "box")){
+    stop(paste0('"', type, '" is not a chart type'))
+  }
 
   settings = list(
     type = type,

@@ -31,7 +31,7 @@ d3plusbar(data, x, y, id = NULL, xlabel = FALSE, ylabel = FALSE,
 
 \item{xtime}{a logical value indicating whether or not the x variable is a time variable.}
 
-\item{attributes}{a named list with attributes data.frame. If the visualization has more than one level, each level is should be an element in the list. See the examples.}
+\item{attributes}{a named list with attributes data.frame. If the visualization has more than one level, each level is should be an element in the list. "hex" column for colors and "icon" for icons. See the examples.}
 
 \item{gridx}{a logical value indicating whether or not the grid lines of x-axis should be displayed.}
 
@@ -79,7 +79,7 @@ d3plusbar(data, x, y, id = NULL, xlabel = FALSE, ylabel = FALSE,
 Function to create D3plus bar charts.
 }
 \examples{
-
+#' 
 library(D3plusR)
 library(dplyr)
 data("trade_bra_chn")

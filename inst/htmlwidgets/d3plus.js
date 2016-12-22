@@ -30,7 +30,8 @@ HTMLWidgets.widget({
         .id(id)
         .title(title)
         .resize(true)
-        .format({"locale": locale});
+        .format({"locale": locale})
+        .legend({"filters": true});
         
         if(x.d3plusAxisX){
           d3plus_viz
