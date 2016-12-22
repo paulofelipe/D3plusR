@@ -32,6 +32,7 @@ attributes <- list(Trade.Flow = data.frame(Trade.Flow = c("Export", "Import"),
                              hex = c("#344969", "#992234")))
 
 d3plus(data = trade_bra_chn, id = "Trade.Flow",
+       type = "bar",
        title = "Brazilian Exports and Imports to/from China",
        height = 400,
        width = "100%") %>% 

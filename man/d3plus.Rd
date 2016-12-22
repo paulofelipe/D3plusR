@@ -22,7 +22,7 @@ d3plus(data = data, type = c("tree_map", "bar", "line", "scatter",
 
 \item{currency}{a name indicating the currency symbol (US$, R$, etc.).}
 
-\item{number_text}{a name to show after the number. In portuguese: c("Mil", "Milhão", "Milhões", "Bilhão", "Bilhões").}
+\item{number_text}{a name to show after the number. In Portuguese: c("Mil", "Milhão", "Milhões", "Bilhão", "Bilhões").}
 
 \item{currency_var}{a vector with variable names to apply the currency format.}
 
