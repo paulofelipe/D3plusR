@@ -13,7 +13,7 @@
 #' @param ylabel label of y-axis. Also it could be TRUE or FALSE. If true the value in `y`param is used. If false, y-label is ommited.
 #' @param title title of the visualization. If false, no title is displayed.
 #' @param xtime a logical value indicating whether or not the x variable is a time variable.
-#' @param attributes a named list with attributes data.frame. If the visualization has more than one level, each level is should be an element in the list. See the examples.
+#' @param attributes a named list with attributes data.frame. If the visualization has more than one level, each level is should be an element in the list. "hex" column for colors and "icon" for icons. See the examples.
 #' @param gridx a logical value indicating whether or not the grid lines of x-axis should be displayed.
 #' @param gridy a logical value indicating whether or not the grid lines of y-axis should be displayed.
 #' @param filters a logical value indicanting whether or not the filter buttons should be included in the legend's tooltips.
