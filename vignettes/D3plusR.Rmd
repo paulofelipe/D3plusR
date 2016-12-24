@@ -12,7 +12,7 @@ vignette: >
 
 ## First Example
 
-The data for first example comes from the Comtrade API. By default, the D3plus library adds the symbol `%` to variables named `share`. To include this symbol in other variables use the `percent_var` argument.
+The data for first example comes from the Comtrade API. By default, the D3plus library adds the symbol `%` to variables named `share`. To include this symbol in other variables use the `percent_var` argument. To add methods to the chart, use the ` %>% ` operator.
 
 ```{r, message=FALSE, warning=FALSE}
 library(D3plusR)
@@ -38,6 +38,7 @@ d3plus(data = trade_bra_chn, id = "Trade.Flow",
        width = "100%") %>% 
   d3plusX(value = "Period") %>% 
   d3plusY(value = "TradeValue") %>% 
+  d3plusLegend(value = TRUE, size = 40) %>% 
   d3plusTooltip(value = c("Period", "TradeValue", "share")) %>% 
   d3plusAttributes(value = attributes) %>% 
   d3plusColor(value = "hex") %>% 

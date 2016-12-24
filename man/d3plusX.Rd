@@ -2,11 +2,12 @@
 % Please edit documentation in R/x.R
 \name{d3plusX}
 \alias{d3plusX}
-\title{<Add Title>}
+\title{Add .x() method to the chart}
 \usage{
 d3plusX(d3plus, value = NULL, ...)
 }
 \description{
-<Add Description>
+Add and control options to the x axis in the visualization.
+See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#x}{d3plus wiki page}.
 }
 

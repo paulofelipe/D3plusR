@@ -43,6 +43,16 @@ HTMLWidgets.widget({
           .y(x.d3plusAxisY);
         }
         
+        if(x.d3plusSize){
+          d3plus_viz
+          .size(x.d3plusSize);
+        }
+        
+        if(x.d3plusLegend){
+          d3plus_viz
+          .legend(x.d3plusLegend);
+        }
+        
         if(x.d3plusAttributes){
           d3plus_viz
           .attrs(x.d3plusAttributes);
@@ -112,43 +122,46 @@ HTMLWidgets.widget({
         });
         }
         
+        setTimeout(function() {
         
-        if(document.getElementById("htmlwidget_container")){
-          d3plus_viz.draw();
-        }
-        else{
-            var active = $(el).closest('div.tab-pane.active');
-            var tab = $(el).closest('div.tab-pane');
-            var dashboard = document.getElementById("dashboard-container");
-    
-            if(active[0]){
-                d3plus_viz.draw();
-            }
-            else if(tab[0]){
-              var tabID = tab.attr('id');
-              var tabAnchor = $('a[data-toggle="tab"][href="#' + tabID + '"]');
-              if (tabAnchor !== null){
-                 tabAnchor.on('shown.bs.tab', function() {
-                   var height, width;
-                  if(dashboard !== null){
-                    height = $(el).closest('div.chart-shim').innerHeight();
-                    width = $(el).closest('div.chart-shim').innerWidth();
-                  }
-                  else{
-                    height = $(el).closest('div.html-widget.html-widget-static-bound').innerHeight();
-                    width = $(el).closest('div.html-widget.html-widget-static-bound').innerWidth();
-                  }
-                  d3plus_viz
-                  .height(height)
-                  .width(width);
+          if(document.getElementById("htmlwidget_container")){
+            d3plus_viz.draw();
+          }
+          else{
+              var active = $(el).closest('div.tab-pane.active');
+              var tab = $(el).closest('div.tab-pane');
+              var dashboard = document.getElementById("dashboard-container");
+              
+              if(tab[0]){
+                var tabID = tab.attr('id');
+                var tabAnchor = $('a[data-toggle="tab"][href="#' + tabID + '"]');
+                if (tabAnchor !== null){
+                   if(active[0]){
+                     d3plus_viz
+                     .draw();
+                   }
+                   tabAnchor.on('shown.bs.tab', function() {
+                     var height, width;
+                    if(dashboard !== null){
+                      height = $(el).closest('div.chart-shim').innerHeight();
+                      width = $(el).closest('div.chart-shim').innerWidth();
+                    }
+                    else{
+                      height = $(el).closest('div.html-widget.html-widget-static-bound').innerHeight();
+                      width = $(el).closest('div.html-widget.html-widget-static-bound').innerWidth();
+                    }
+                    d3plus_viz
+                    .height(height)
+                    .width(width);
+                    d3plus_viz.draw();
+                  });
+                }
+              }
+              else{
                   d3plus_viz.draw();
-                });
               }
             }
-            else{
-                d3plus_viz.draw();
-            }
-          }
+        }, 10);
       },
       
       resize: function(width, height){

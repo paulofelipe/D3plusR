@@ -1,13 +1,13 @@
 # (uncomment to add a dependency)
  dependencies:
+  - name: jquery
+    version: 3.1.1
+    src: htmlwidgets/lib/jquery.v.3.1.1.slim
+    script:
+        - jquery.3.1.1.slim.min.js
   - name: d3plus
     version: 1.9.6
     src: htmlwidgets/lib/d3plus.v1.9.6
     script:
         - d3.min.js
         - d3plus.min.js
-  - name: jquery
-    version: 3.1.1
-    src: htmlwidgets/lib/jquery.v.3.1.1.slim
-    script:
-        - jquery.3.1.1.slim.min.js
