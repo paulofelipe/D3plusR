@@ -19,6 +19,11 @@
 #' @import htmlwidgets
 #'
 #' @export
+#' 
+#' @examples 
+#' 
+#' 
+
 d3plus <- function(data = data,
                    type = c("tree_map", "bar", "line", "scatter", "geo_map",
                             "stacked", "radar", "sankey", "rings", "network",
