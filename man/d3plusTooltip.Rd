@@ -2,11 +2,12 @@
 % Please edit documentation in R/tooltip.R
 \name{d3plusTooltip}
 \alias{d3plusTooltip}
-\title{<Add Title>}
+\title{Adds .tooltip() method to the chart}
 \usage{
 d3plusTooltip(d3plus, value = NULL, ...)
 }
 \description{
-<Add Description>
+Adds variables to the tooltip and controls options.
+See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#tooltip}{d3plus wiki page}.
 }
 

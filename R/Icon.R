@@ -1,6 +1,7 @@
-#' <Add Title>
+#' Adds .icon() method to the chart
 #'
-#' <Add Description>
+#' Defines the column name that contains the icon URL and controls other options.
+#' See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#icon}{d3plus wiki page}.
 #'
 #' @import htmlwidgets
 #'

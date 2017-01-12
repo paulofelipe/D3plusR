@@ -72,6 +72,11 @@ HTMLWidgets.widget({
           d3plus_viz
           .tooltip(x.d3plusTooltip);
         }
+
+        if(x.d3plusTime){
+          d3plus_viz
+          .time(x.d3plusTime);
+        }
         
         if(currency_var === null){
           currency_var = [];

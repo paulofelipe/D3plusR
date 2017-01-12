@@ -1,3 +1,10 @@
+## ---- eval=FALSE---------------------------------------------------------
+#  d3plus(data = data,
+#         type = "bar",
+#         id = "name") %>%
+#    d3plusX(value = "year") %>%
+#    d3plusY(value = "value")
+
 ## ---- message=FALSE, warning=FALSE---------------------------------------
 library(D3plusR)
 library(dplyr)
@@ -18,12 +25,30 @@ attributes <- list(Trade.Flow = data.frame(Trade.Flow = c("Export", "Import"),
 d3plus(data = trade_bra_chn, id = "Trade.Flow",
        type = "bar",
        title = "Brazilian Exports and Imports to/from China",
+       dictionary = dictionary,
        height = 400,
        width = "100%") %>% 
   d3plusX(value = "Period") %>% 
   d3plusY(value = "TradeValue") %>% 
+  d3plusLegend(value = TRUE, size = 30, data = FALSE) %>% 
   d3plusTooltip(value = c("Period", "TradeValue", "share")) %>% 
   d3plusAttributes(value = attributes) %>% 
   d3plusColor(value = "hex") %>% 
   d3plusIcon(value = "icon", style = "knockout")
+
+## ------------------------------------------------------------------------
+d3plus(data = trade_bra_chn, id = "Trade.Flow",
+       type = "line",
+       title = "Brazilian Exports and Imports to/from China",
+       height = 400,
+       width = "100%") %>% 
+  d3plusX(value = "Period") %>% 
+  d3plusY(value = "TradeValue") %>% 
+  d3plusLegend(value = TRUE, size = 30, data = FALSE) %>% 
+  d3plusTooltip(value = c("Period", "TradeValue", "share")) %>% 
+  d3plusAttributes(value = attributes) %>% 
+  d3plusColor(value = "hex") %>% 
+  d3plusIcon(value = "icon", style = "knockout") %>% 
+  d3plusTime(value = "Period")
+
 

@@ -1,6 +1,7 @@
-#' <Add Title>
+#' Adds .legend() method to the chart
 #'
-#' <Add Description>
+#' Adds and controls legend options.
+#' See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#x}{d3plus wiki page}.
 #'
 #' @import htmlwidgets
 #'

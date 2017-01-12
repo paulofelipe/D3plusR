@@ -2,11 +2,12 @@
 % Please edit documentation in R/Icon.R
 \name{d3plusIcon}
 \alias{d3plusIcon}
-\title{<Add Title>}
+\title{Adds .icon() method to the chart}
 \usage{
 d3plusIcon(d3plus, value = NULL, ...)
 }
 \description{
-<Add Description>
+Defines the column name that contains the icon URL and controls other options.
+See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#icon}{d3plus wiki page}.
 }
 

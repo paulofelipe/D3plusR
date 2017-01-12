@@ -41,4 +41,8 @@ d3plus(data = data, type = c("tree_map", "bar", "line", "scatter",
 \description{
 A function to initialize a D3plus chart in R
 }
+\examples{
+
+
+}
 

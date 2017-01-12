@@ -10,9 +10,38 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-## First Example
+## About D3plus
 
-The data for first example comes from the Comtrade API. By default, the D3plus library adds the symbol `%` to variables named `share`. To include this symbol in other variables use the `percent_var` argument. To add methods to the chart, use the ` %>% ` operator.
+[D3plus](https://d3plus.org/) is a javascript library build on top of D3.js. The idea of D3plusR package is supply a R interface to this (D3plus) javascript library. The original package has several methods. Almost every method will be available in a R function. However, some of them are grouped in a specific function: `d3plus()` To know about those methods see [this page](https://github.com/alexandersimoes/d3plus/wiki/Visualizations).
+
+Below we see an example in the original javascript library:
+
+```js
+var visualization = d3plus.viz()
+    .container("#viz")
+    .data(data)
+    .type("bar")
+    .id("name")
+    .x("year")
+    .y("value")
+    .draw()
+```
+
+In this R package the code above is translated in this way:
+
+```{r, eval=FALSE}
+d3plus(data = data,
+       type = "bar",
+       id = "name") %>% 
+  d3plusX(value = "year") %>% 
+  d3plusY(value = "value")
+```
+
+If a method key (option) can receive other keys (options), this must be supplied as list.
+
+## Line Chart
+
+The data for first example comes from the [Comtrade API](https://comtrade.un.org/data/doc/api). By default, the D3plus library adds the symbol `%` to variables named `share`. To include this symbol in other variables use the `percent_var` argument. To add methods to the chart, use the ` %>% ` operator.
 
 ```{r, message=FALSE, warning=FALSE}
 library(D3plusR)
@@ -34,14 +63,37 @@ attributes <- list(Trade.Flow = data.frame(Trade.Flow = c("Export", "Import"),
 d3plus(data = trade_bra_chn, id = "Trade.Flow",
        type = "bar",
        title = "Brazilian Exports and Imports to/from China",
+       dictionary = dictionary,
        height = 400,
        width = "100%") %>% 
   d3plusX(value = "Period") %>% 
   d3plusY(value = "TradeValue") %>% 
-  d3plusLegend(value = TRUE, size = 40) %>% 
+  d3plusLegend(value = TRUE, size = 30, data = FALSE) %>% 
   d3plusTooltip(value = c("Period", "TradeValue", "share")) %>% 
   d3plusAttributes(value = attributes) %>% 
   d3plusColor(value = "hex") %>% 
   d3plusIcon(value = "icon", style = "knockout")
+```
+
+## Line chart 
+
+The example below uses `type = "line"` and adds the `d3plusTime()` function (`.time()` method).
+
+
+```{r}
+d3plus(data = trade_bra_chn, id = "Trade.Flow",
+       type = "line",
+       title = "Brazilian Exports and Imports to/from China",
+       height = 400,
+       width = "100%") %>% 
+  d3plusX(value = "Period") %>% 
+  d3plusY(value = "TradeValue") %>% 
+  d3plusLegend(value = TRUE, size = 30, data = FALSE) %>% 
+  d3plusTooltip(value = c("Period", "TradeValue", "share")) %>% 
+  d3plusAttributes(value = attributes) %>% 
+  d3plusColor(value = "hex") %>% 
+  d3plusIcon(value = "icon", style = "knockout") %>% 
+  d3plusTime(value = "Period")
+
 ```
 

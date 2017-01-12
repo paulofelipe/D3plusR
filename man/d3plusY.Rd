@@ -2,12 +2,12 @@
 % Please edit documentation in R/y.R
 \name{d3plusY}
 \alias{d3plusY}
-\title{Add .y() method to the chart}
+\title{Adds .y() method to the chart}
 \usage{
 d3plusY(d3plus, value = NULL, ...)
 }
 \description{
-Add and control options to the y axis in the visualization.
+Adds and controls the y axis options in the visualization.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#x}{d3plus wiki page}.
 }
 

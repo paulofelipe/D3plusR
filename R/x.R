@@ -1,6 +1,6 @@
-#' Add .x() method to the chart
+#' Adds.x() method to the chart
 #'
-#' Add and control options to the x axis in the visualization.
+#' Adds and controls the x axis options in the visualization.
 #' See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#x}{d3plus wiki page}.
 #'
 #' @import htmlwidgets
