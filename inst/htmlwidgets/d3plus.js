@@ -83,6 +83,11 @@ HTMLWidgets.widget({
           d3plus_viz
           .depth(x.d3plusDepth);
         }
+
+        if(x.d3plusLabels){
+          d3plus_viz
+          .labels(x.d3plusLabels);
+        }
         
         if(currency_var === null){
           currency_var = [];
