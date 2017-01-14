@@ -3,6 +3,7 @@
 export(d3plus)
 export(d3plusAttributes)
 export(d3plusColor)
+export(d3plusDepth)
 export(d3plusIcon)
 export(d3plusLegend)
 export(d3plusOutput)

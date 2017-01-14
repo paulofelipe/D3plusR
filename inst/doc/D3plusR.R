@@ -52,3 +52,15 @@ d3plus(data = trade_bra_chn, id = "Trade.Flow",
   d3plusTime(value = "Period")
 
 
+## ------------------------------------------------------------------------
+data("bra_exp_2015")
+d3plus(data = bra_exp_2015,
+       type = "tree_map",
+       id = c("region", "Partner"),
+       width = "100%",
+       height = 500) %>% 
+  d3plusSize(value = "Trade.Value..US..") %>% 
+  d3plusLegend(value = TRUE, order = list(sort = "desc", value = "size")) %>% 
+  d3plusColor("region") %>% 
+  d3plusDepth(1)
+
