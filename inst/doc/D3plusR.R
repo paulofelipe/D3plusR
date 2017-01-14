@@ -37,19 +37,22 @@ d3plus(data = trade_bra_chn, id = "Trade.Flow",
   d3plusIcon(value = "icon", style = "knockout")
 
 ## ------------------------------------------------------------------------
-d3plus(data = trade_bra_chn, id = "Trade.Flow",
+data("bra_inflation")
+
+# dates to be passed in solo argument
+date_filter <- bra_inflation$Date[bra_inflation$Date > "2013/01/01"]
+
+
+d3plus(data = bra_inflation, id = "country",
        type = "line",
-       title = "Brazilian Exports and Imports to/from China",
+       title = "Brazilian Inflation (IPCA)",
+       percent_var = "Rate",
        height = 400,
        width = "100%") %>% 
-  d3plusX(value = "Period") %>% 
-  d3plusY(value = "TradeValue") %>% 
-  d3plusLegend(value = TRUE, size = 30, data = FALSE) %>% 
-  d3plusTooltip(value = c("Period", "TradeValue", "share")) %>% 
-  d3plusAttributes(value = attributes) %>% 
-  d3plusColor(value = "hex") %>% 
-  d3plusIcon(value = "icon", style = "knockout") %>% 
-  d3plusTime(value = "Period")
+  d3plusX(value = "Date", grid = FALSE) %>% 
+  d3plusY(value = "Rate") %>% 
+  d3plusTime(value = "Date", solo = date_filter) %>% 
+  d3plusTooltip(value = "Date")
 
 
 ## ------------------------------------------------------------------------
@@ -62,5 +65,6 @@ d3plus(data = bra_exp_2015,
   d3plusSize(value = "Trade.Value..US..") %>% 
   d3plusLegend(value = TRUE, order = list(sort = "desc", value = "size")) %>% 
   d3plusColor("region") %>% 
-  d3plusDepth(1)
+  d3plusDepth(1) %>% 
+  d3plusLabels(valign = "top")
 
