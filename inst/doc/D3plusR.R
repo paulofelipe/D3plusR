@@ -68,3 +68,21 @@ d3plus(data = bra_exp_2015,
   d3plusDepth(1) %>% 
   d3plusLabels(valign = "top")
 
+## ------------------------------------------------------------------------
+mapa <- system.file("extdata", "countries.topojson", package = "D3plusR")
+mapa <- jsonlite::fromJSON(mapa, simplifyVector = F)
+
+d3 <- d3plus(data = bra_exp_2015,
+       type = "geo_map",
+       id = "Partner.ISO",
+       title = "Brazilian Exports Destinations",
+       width = "100%",
+       height = 500) %>% 
+  d3plusCoords(mapa, projection = "equirectangular") %>% 
+  d3plusColor(value = "Trade.Value..US..") %>% 
+  d3plusTooltip(value = c("Trade.Value..US..", "Partner")) %>% 
+  d3plusLabels(FALSE)
+
+d3
+
+

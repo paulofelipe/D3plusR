@@ -89,6 +89,11 @@ HTMLWidgets.widget({
           .labels(x.d3plusLabels);
         }
         
+        if(x.d3plusCoords){
+          d3plus_viz
+          .coords(x.d3plusCoords);
+        }
+        
         if(currency_var === null){
           currency_var = [];
         }

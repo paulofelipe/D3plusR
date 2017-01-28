@@ -39,7 +39,7 @@ d3plus(data = data,
 
 If a method key (option) can receive other keys (options), this must be supplied as list.
 
-## Line Chart
+## Bar Chart
 
 The data for first example comes from the [Comtrade API](https://comtrade.un.org/data/doc/api). By default, the D3plus library adds the symbol `%` to variables named `share`. To include this symbol in other variables use the `percent_var` argument. To add methods to the chart, use the ` %>% ` operator.
 
@@ -100,7 +100,7 @@ d3plus(data = bra_inflation, id = "country",
 
 ```
 
-# Treemap
+## Treemap
 
 ```{r}
 data("bra_exp_2015")
@@ -114,5 +114,26 @@ d3plus(data = bra_exp_2015,
   d3plusColor("region") %>% 
   d3plusDepth(1) %>% 
   d3plusLabels(valign = "top")
+```
+
+## Geo Map
+
+```{r}
+mapa <- system.file("extdata", "countries.topojson", package = "D3plusR")
+mapa <- jsonlite::fromJSON(mapa, simplifyVector = F)
+
+d3 <- d3plus(data = bra_exp_2015,
+       type = "geo_map",
+       id = "Partner.ISO",
+       title = "Brazilian Exports Destinations",
+       width = "100%",
+       height = 500) %>% 
+  d3plusCoords(mapa, projection = "equirectangular") %>% 
+  d3plusColor(value = "Trade.Value..US..") %>% 
+  d3plusTooltip(value = c("Trade.Value..US..", "Partner")) %>% 
+  d3plusLabels(FALSE)
+
+d3
+
 ```
 
