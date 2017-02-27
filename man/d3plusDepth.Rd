@@ -7,7 +7,7 @@
 d3plusDepth(d3plus, value = NULL, ...)
 }
 \description{
-If `id` has more than one level, this function sets a specific nesting level.
+If id has more than one level, this function sets a specific nesting level.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#depth}{d3plus wiki page}.
 }
 

@@ -94,6 +94,21 @@ HTMLWidgets.widget({
           .coords(x.d3plusCoords);
         }
         
+        if(x.d3plusText){
+          d3plus_viz
+          .text(x.d3plusText);
+        }
+        
+        if(x.d3plusFooter){
+          d3plus_viz
+          .footer(x.d3plusFooter);
+        }
+        
+        if(x.d3plusTitle){
+          d3plus_viz
+          .title(x.d3plusTitle);
+        }
+        
         if(currency_var === null){
           currency_var = [];
         }
