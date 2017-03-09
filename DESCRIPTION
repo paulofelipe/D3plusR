@@ -11,7 +11,7 @@ Maintainer: Paulo Alencar <paulofel2011@gmail.com>
 Description: A R interface for D3plus javascript library.
 License: MIT
 Imports:
-    htmlwidgets
+  htmlwidgets, jsonlite
 RoxygenNote: 5.0.1
 Suggests: knitr,
     rmarkdown

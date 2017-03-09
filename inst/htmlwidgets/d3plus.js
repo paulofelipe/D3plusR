@@ -109,6 +109,16 @@ HTMLWidgets.widget({
           .title(x.d3plusTitle);
         }
         
+        if(x.d3plusNodes){
+          d3plus_viz
+          .nodes(x.d3plusNodes);
+        }
+        
+        if(x.d3plusEdges){
+          d3plus_viz
+          .edges(x.d3plusEdges);
+        }
+        
         if(currency_var === null){
           currency_var = [];
         }
