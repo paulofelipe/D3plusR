@@ -1,5 +1,5 @@
 # D3plusR
-A package for D3plus in R (very preliminary)
+A package for D3plus in R.
 
 ## Install
 
@@ -7,7 +7,7 @@ A package for D3plus in R (very preliminary)
 devtools::install_github('paulofelipe/D3plusR')
 ```
 
-## Vignette
+## See examples
 
 ```
 vignette("D3plusR")

@@ -15,7 +15,6 @@ HTMLWidgets.widget({
         var data = HTMLWidgets.dataframeToD3(x.data);
         var type = x.settings.type;
         var id = x.settings.id;
-        var title = x.settings.title;
         var currency = x.settings.currency;
         var number_text = x.settings.number_text;
         var currency_var = x.settings.currency_var;
@@ -28,7 +27,6 @@ HTMLWidgets.widget({
         .data(data)
         .type(type)
         .id(id)
-        .title(title)
         .resize(true)
         .format({"locale": locale})
         .legend({"filters": true});

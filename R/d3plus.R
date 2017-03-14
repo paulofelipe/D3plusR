@@ -5,9 +5,8 @@
 #' @param data a data.frame object to create the visualization.
 #' @param type a name indicating the type of the chart.
 #' @param id a vector with the id's column names.
-#' @param title title of the visualization. If false, no title is displayed.
 #' @param currency a name indicating the currency symbol (US$, R$, etc.).
-#' @param number_text a name to show after the number. In Portuguese: c("Mil", "Milhão", "Milhões", "Bilhão", "Bilhões").
+#' @param number_text a name to show after the number. Example: c("K", "M", "M", "B", "B").
 #' @param currency_var a vector with variable names to apply the currency format.
 #' @param percent_var a vector with variable names to apply the share format.
 #' @param locale a name indicating the language to be used
@@ -28,7 +27,7 @@ d3plus <- function(data = data,
                    type = c("tree_map", "bar", "line", "scatter", "geo_map",
                             "stacked", "radar", "sankey", "rings", "network",
                             "box"),
-                   id = NULL, title = FALSE, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
+                   id = NULL, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
                    currency_var = NULL, percent_var = NULL, locale = "en_US",
                    dictionary = NULL, width = NULL, height = NULL, elementId = NULL) {
 

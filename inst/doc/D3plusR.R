@@ -24,7 +24,6 @@ attributes <- list(Trade.Flow = data.frame(Trade.Flow = c("Export", "Import"),
 
 d3plus(data = trade_bra_chn, id = "Trade.Flow",
        type = "bar",
-       title = "Brazilian Exports and Imports to/from China",
        dictionary = dictionary,
        height = 400,
        width = "100%") %>% 
@@ -34,7 +33,8 @@ d3plus(data = trade_bra_chn, id = "Trade.Flow",
   d3plusTooltip(value = c("Period", "TradeValue", "share")) %>% 
   d3plusAttributes(value = attributes) %>% 
   d3plusColor(value = "hex") %>% 
-  d3plusIcon(value = "icon", style = "knockout")
+  d3plusIcon(value = "icon", style = "knockout") %>% 
+  d3plusTitle("Brazilian Exports and Imports to/from China")
 
 ## ------------------------------------------------------------------------
 data("bra_inflation")
@@ -45,14 +45,14 @@ date_filter <- bra_inflation$Date[bra_inflation$Date > "2013/01/01"]
 
 d3plus(data = bra_inflation, id = "country",
        type = "line",
-       title = "Brazilian Inflation (IPCA)",
        percent_var = "Rate",
        height = 400,
        width = "100%") %>% 
   d3plusX(value = "Date", grid = FALSE) %>% 
   d3plusY(value = "Rate") %>% 
   d3plusTime(value = "Date", solo = date_filter) %>% 
-  d3plusTooltip(value = "Date")
+  d3plusTooltip(value = "Date") %>% 
+  d3plusTitle("Brazilian Inflation (IPCA)")
 
 
 ## ------------------------------------------------------------------------
@@ -75,14 +75,56 @@ mapa <- jsonlite::fromJSON(mapa, simplifyVector = F)
 d3 <- d3plus(data = bra_exp_2015,
        type = "geo_map",
        id = "Partner.ISO",
-       title = "Brazilian Exports Destinations",
        width = "100%",
        height = 500) %>% 
   d3plusCoords(mapa, projection = "equirectangular") %>% 
   d3plusColor(value = "Trade.Value..US..") %>% 
   d3plusTooltip(value = c("Trade.Value..US..", "Partner")) %>% 
-  d3plusLabels(FALSE)
+  d3plusLabels(FALSE) %>% 
+  d3plusTitle("Brazilian Exports Destinations")
 
 d3
 
+
+## ------------------------------------------------------------------------
+library(jsonlite)
+sample_data <- fromJSON('[
+    {"name": "alpha", "size": 10},
+    {"name": "beta", "size": 12},
+    {"name": "gamma", "size": 30},
+    {"name": "delta", "size": 26},
+    {"name": "epsilon", "size": 12},
+    {"name": "zeta", "size": 26},
+    {"name": "theta", "size": 11},
+    {"name": "eta", "size": 24}
+  ]')
+
+positions <- fromJSON('[
+    {"name": "alpha", "x": 10, "y": 15},
+    {"name": "beta", "x": 12, "y": 24},
+    {"name": "gamma", "x": 16, "y": 18},
+    {"name": "delta", "x": 26, "y": 21},
+    {"name": "epsilon", "x": 13, "y": 4},
+    {"name": "zeta", "x": 31, "y": 13},
+    {"name": "theta", "x": 19, "y": 8},
+    {"name": "eta", "x": 24, "y": 11}
+  ]')
+
+connections <- fromJSON('[
+    {"source": "alpha", "target": "beta"},
+    {"source": "alpha", "target": "gamma"},
+    {"source": "beta", "target": "delta"},
+    {"source": "beta", "target": "epsilon"},
+    {"source": "zeta", "target": "gamma"},
+    {"source": "theta", "target": "gamma"},
+    {"source": "eta", "target": "gamma"}
+  ]')
+
+## ------------------------------------------------------------------------
+d3plus(data = sample_data, type = "network", id = "name",
+       width = "100%",
+       height = "400px") %>% 
+  d3plusNodes(positions) %>% 
+  d3plusEdges(value = connections, arrows = TRUE) %>% 
+  d3plusSize("size")
 

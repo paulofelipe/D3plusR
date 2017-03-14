@@ -6,10 +6,9 @@
 \usage{
 d3plus(data = data, type = c("tree_map", "bar", "line", "scatter",
   "geo_map", "stacked", "radar", "sankey", "rings", "network", "box"),
-  id = NULL, title = FALSE, currency = "US$", number_text = c("K", "M",
-  "M", "B", "B"), currency_var = NULL, percent_var = NULL,
-  locale = "en_US", dictionary = NULL, width = NULL, height = NULL,
-  elementId = NULL)
+  id = NULL, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
+  currency_var = NULL, percent_var = NULL, locale = "en_US",
+  dictionary = NULL, width = NULL, height = NULL, elementId = NULL)
 }
 \arguments{
 \item{data}{a data.frame object to create the visualization.}
@@ -18,11 +17,9 @@ d3plus(data = data, type = c("tree_map", "bar", "line", "scatter",
 
 \item{id}{a vector with the id's column names.}
 
-\item{title}{title of the visualization. If false, no title is displayed.}
-
 \item{currency}{a name indicating the currency symbol (US$, R$, etc.).}
 
-\item{number_text}{a name to show after the number. In Portuguese: c("Mil", "Milhão", "Milhões", "Bilhão", "Bilhões").}
+\item{number_text}{a name to show after the number. Example: c("K", "M", "M", "B", "B").}
 
 \item{currency_var}{a vector with variable names to apply the currency format.}
 
