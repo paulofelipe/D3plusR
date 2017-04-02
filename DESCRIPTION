@@ -12,7 +12,7 @@ Description: A R interface for D3plus javascript library.
 Encoding: UTF-8
 License: MIT
 Imports:
-  htmlwidgets, jsonlite
+    htmlwidgets, jsonlite, magrittr
 RoxygenNote: 5.0.1
 Suggests: knitr,
     rmarkdown

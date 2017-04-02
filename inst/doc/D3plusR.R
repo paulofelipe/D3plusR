@@ -68,7 +68,7 @@ d3plus(data = bra_exp_2015,
   d3plusDepth(1) %>% 
   d3plusLabels(valign = "top")
 
-## ------------------------------------------------------------------------
+## ---------------------------------------------------------------------
 mapa <- system.file("extdata", "countries.topojson", package = "D3plusR")
 mapa <- jsonlite::fromJSON(mapa, simplifyVector = F)
 
@@ -86,7 +86,7 @@ d3 <- d3plus(data = bra_exp_2015,
 d3
 
 
-## ------------------------------------------------------------------------
+## ---------------------------------------------------------------------
 library(jsonlite)
 sample_data <- fromJSON('[
     {"name": "alpha", "size": 10},
@@ -120,7 +120,7 @@ connections <- fromJSON('[
     {"source": "eta", "target": "gamma"}
   ]')
 
-## ------------------------------------------------------------------------
+## ---------------------------------------------------------------------
 d3plus(data = sample_data, type = "network", id = "name",
        width = "100%",
        height = "400px") %>% 

@@ -117,6 +117,31 @@ HTMLWidgets.widget({
           .edges(x.d3plusEdges);
         }
         
+        if(x.d3plusActive){
+          d3plus_viz
+          .active(x.d3plusActive);
+        }
+        
+        if(x.d3plusAggs){
+          d3plus_viz
+          .aggs(x.d3plusAggs);
+        }
+        
+        if(x.d3plusTotal){
+          d3plus_viz
+          .total(x.d3plusTotal);
+        }
+        
+        if(x.d3plusAxes){
+          d3plus_viz
+          .axes(x.d3plusAxes);
+        }
+
+        if(x.d3plusCols){
+          d3plus_viz
+          .cols(x.d3plusCols);
+        }
+        
         if(currency_var === null){
           currency_var = [];
         }
