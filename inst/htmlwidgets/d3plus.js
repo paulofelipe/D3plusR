@@ -142,6 +142,11 @@ HTMLWidgets.widget({
           .cols(x.d3plusCols);
         }
         
+        if(x.d3plusId){
+          d3plus_viz
+          .id(x.d3plusId);
+        }
+        
         if(currency_var === null){
           currency_var = [];
         }
