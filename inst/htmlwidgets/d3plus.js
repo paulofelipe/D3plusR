@@ -147,6 +147,21 @@ HTMLWidgets.widget({
           .id(x.d3plusId);
         }
         
+        if(x.d3plusZoom){
+          d3plus_viz
+          .zoom(x.d3plusZoom);
+        }
+        
+        if(x.d3plusFocus){
+          d3plus_viz
+          .focus(x.d3plusFocus);
+        }
+        
+        if(x.d3plusUi){
+          d3plus_viz
+          .ui(x.d3plusUi);
+        }  
+        
         if(currency_var === null){
           currency_var = [];
         }

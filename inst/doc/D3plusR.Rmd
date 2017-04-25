@@ -113,7 +113,8 @@ d3plus(data = bra_exp_2015,
   d3plusLegend(value = TRUE, order = list(sort = "desc", value = "size")) %>% 
   d3plusColor("region") %>% 
   d3plusDepth(1) %>% 
-  d3plusLabels(valign = "top")
+  d3plusLabels(valign = "top") %>% 
+  d3plusUi(list(method = "color", value = c("region", "Trade.Value..US..")))
 ```
 
 ## Geo Map
@@ -131,7 +132,8 @@ d3 <- d3plus(data = bra_exp_2015,
   d3plusColor(value = "Trade.Value..US..") %>% 
   d3plusTooltip(value = c("Trade.Value..US..", "Partner")) %>% 
   d3plusLabels(FALSE) %>% 
-  d3plusTitle("Brazilian Exports Destinations")
+  d3plusTitle("Brazilian Exports Destinations") %>% 
+  d3plusZoom(value = TRUE, scroll = FALSE) 
 
 d3
 

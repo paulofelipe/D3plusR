@@ -66,9 +66,10 @@ d3plus(data = bra_exp_2015,
   d3plusLegend(value = TRUE, order = list(sort = "desc", value = "size")) %>% 
   d3plusColor("region") %>% 
   d3plusDepth(1) %>% 
-  d3plusLabels(valign = "top")
+  d3plusLabels(valign = "top") %>% 
+  d3plusUi(list(method = "color", value = c("region", "Trade.Value..US..")))
 
-## ---------------------------------------------------------------------
+## ------------------------------------------------------------------------
 mapa <- system.file("extdata", "countries.topojson", package = "D3plusR")
 mapa <- jsonlite::fromJSON(mapa, simplifyVector = F)
 
@@ -81,12 +82,13 @@ d3 <- d3plus(data = bra_exp_2015,
   d3plusColor(value = "Trade.Value..US..") %>% 
   d3plusTooltip(value = c("Trade.Value..US..", "Partner")) %>% 
   d3plusLabels(FALSE) %>% 
-  d3plusTitle("Brazilian Exports Destinations")
+  d3plusTitle("Brazilian Exports Destinations") %>% 
+  d3plusZoom(value = TRUE, scroll = FALSE) 
 
 d3
 
 
-## ---------------------------------------------------------------------
+## ------------------------------------------------------------------------
 library(jsonlite)
 sample_data <- fromJSON('[
     {"name": "alpha", "size": 10},
@@ -120,7 +122,7 @@ connections <- fromJSON('[
     {"source": "eta", "target": "gamma"}
   ]')
 
-## ---------------------------------------------------------------------
+## ------------------------------------------------------------------------
 d3plus(data = sample_data, type = "network", id = "name",
        width = "100%",
        height = "400px") %>% 
