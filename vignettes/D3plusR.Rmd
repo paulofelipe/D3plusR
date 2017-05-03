@@ -69,7 +69,7 @@ d3plus(data = trade_bra_chn, id = "Trade.Flow",
   d3plusY(value = "TradeValue") %>% 
   d3plusLegend(value = TRUE, size = 30, data = FALSE) %>% 
   d3plusTooltip(value = c("Period", "TradeValue", "share")) %>% 
-  d3plusAttributes(value = attributes) %>% 
+  d3plusAttrs(value = attributes) %>% 
   d3plusColor(value = "hex") %>% 
   d3plusIcon(value = "icon", style = "knockout") %>% 
   d3plusTitle("Brazilian Exports and Imports to/from China")

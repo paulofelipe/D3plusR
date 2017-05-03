@@ -31,7 +31,7 @@ d3plus(data = trade_bra_chn, id = "Trade.Flow",
   d3plusY(value = "TradeValue") %>% 
   d3plusLegend(value = TRUE, size = 30, data = FALSE) %>% 
   d3plusTooltip(value = c("Period", "TradeValue", "share")) %>% 
-  d3plusAttributes(value = attributes) %>% 
+  d3plusAttrs(value = attributes) %>% 
   d3plusColor(value = "hex") %>% 
   d3plusIcon(value = "icon", style = "knockout") %>% 
   d3plusTitle("Brazilian Exports and Imports to/from China")
@@ -67,7 +67,8 @@ d3plus(data = bra_exp_2015,
   d3plusColor("region") %>% 
   d3plusDepth(1) %>% 
   d3plusLabels(valign = "top") %>% 
-  d3plusUi(list(method = "color", value = c("region", "Trade.Value..US..")))
+  d3plusUi(value = list(list(method = "color", value = c("region", "Trade.Value..US..")),
+                        list(method = "depth", value = c(0, 1))))
 
 ## ------------------------------------------------------------------------
 mapa <- system.file("extdata", "countries.topojson", package = "D3plusR")

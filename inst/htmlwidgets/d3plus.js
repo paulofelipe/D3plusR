@@ -51,9 +51,9 @@ HTMLWidgets.widget({
           .legend(x.d3plusLegend);
         }
         
-        if(x.d3plusAttributes){
+        if(x.d3plusAttrs){
           d3plus_viz
-          .attrs(x.d3plusAttributes);
+          .attrs(x.d3plusAttrs);
         }
         
         if(x.d3plusColor){
