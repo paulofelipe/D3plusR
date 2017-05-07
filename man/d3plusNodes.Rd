@@ -10,4 +10,3 @@ d3plusNodes(d3plus, value = NULL, ...)
 Sets the positions of the nodes (x, y) in a network.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#nodes}{d3plus wiki page}.
 }
-

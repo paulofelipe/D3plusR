@@ -10,4 +10,3 @@ d3plusCols(d3plus, value = NULL, ...)
 Specify the columns in a table visualization.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#cols}{d3plus wiki page}.
 }
-

@@ -13,7 +13,7 @@ Encoding: UTF-8
 License: MIT
 Imports:
     htmlwidgets, jsonlite, magrittr
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr

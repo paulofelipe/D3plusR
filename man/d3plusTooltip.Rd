@@ -10,4 +10,3 @@ d3plusTooltip(d3plus, value = NULL, ...)
 Adds variables to the tooltip and controls options.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#tooltip}{d3plus wiki page}.
 }
-

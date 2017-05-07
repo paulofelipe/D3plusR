@@ -10,4 +10,3 @@ d3plusX(d3plus, value = NULL, ...)
 Adds and controls the x axis options in the visualization.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#x}{d3plus wiki page}.
 }
-

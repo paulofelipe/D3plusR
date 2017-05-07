@@ -38,7 +38,8 @@ d3plus(data = trade_bra_chn, id = "Trade.Flow",
 
 ## ------------------------------------------------------------------------
 data("bra_inflation")
-
+# Date variables must have this format
+bra_inflation$Date <- format(bra_inflation$Date, "%Y/%m/%d")
 # dates to be passed in solo argument
 date_filter <- bra_inflation$Date[bra_inflation$Date > "2013/01/01"]
 

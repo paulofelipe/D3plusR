@@ -42,4 +42,3 @@ A function to initialize a D3plus chart in R
 
 
 }
-

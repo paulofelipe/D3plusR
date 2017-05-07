@@ -10,4 +10,3 @@ d3plusTitle(d3plus, value = NULL, ...)
 Defines the visualization's title and control other options.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#title}{d3plus wiki page}.
 }
-

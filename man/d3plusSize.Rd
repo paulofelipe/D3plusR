@@ -10,4 +10,3 @@ d3plusSize(d3plus, value = NULL, ...)
 Defines the size variable and controls other options.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#size}{d3plus wiki page}.
 }
-

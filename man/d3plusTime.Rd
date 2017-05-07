@@ -10,4 +10,3 @@ d3plusTime(d3plus, value = NULL, ...)
 Defines the time variable and controls other options. The time variable slices the chart in time periods
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#time}{d3plus wiki page}.
 }
-

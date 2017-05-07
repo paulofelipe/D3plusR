@@ -9,4 +9,3 @@ d3plusColor(d3plus, value = NULL, ...)
 \description{
 <Add Description>
 }
-

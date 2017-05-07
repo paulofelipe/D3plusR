@@ -10,4 +10,3 @@ d3plusTotal(d3plus, value = NULL, ...)
 Defines the variable in data associated with the total number of parts of a data point.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#total}{d3plus wiki page}.
 }
-

@@ -10,4 +10,3 @@ d3plusActive(d3plus, value = NULL, ...)
 Function to define the key associated with the active parts .
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#active}{d3plus wiki page}.
 }
-

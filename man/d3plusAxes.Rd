@@ -10,4 +10,3 @@ d3plusAxes(d3plus, ticks = TRUE, mirror = FALSE, ...)
 Defines specifics aspects of the X and Y axes.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#axes}{d3plus wiki page}.
 }
-

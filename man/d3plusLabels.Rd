@@ -10,4 +10,3 @@ d3plusLabels(d3plus, value = NULL, ...)
 Controls the labels settings. To control which text should be showed, use the d3plusText() function.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#labels}{d3plus wiki page}.
 }
-

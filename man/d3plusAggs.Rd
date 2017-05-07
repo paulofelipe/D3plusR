@@ -10,4 +10,3 @@ d3plusAggs(d3plus, ...)
 Defines how specific variables should be aggregated.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#aggs}{d3plus wiki page}.
 }
-

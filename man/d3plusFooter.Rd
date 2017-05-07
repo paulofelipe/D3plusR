@@ -10,4 +10,3 @@ d3plusFooter(d3plus, value = NULL, ...)
 Defines the footer of the visualization.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#footer}{d3plus wiki page}.
 }
-

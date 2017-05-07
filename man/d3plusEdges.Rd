@@ -10,4 +10,3 @@ d3plusEdges(d3plus, value = NULL, ...)
 Sets the list of the edges in a network or rings charts. The data.frame should have the source and targe columns. The values should match with the id.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#edges}{d3plus wiki page}.
 }
-

@@ -10,4 +10,3 @@ d3plusIcon(d3plus, value = NULL, ...)
 Defines the column name that contains the icon URL and controls other options.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#icon}{d3plus wiki page}.
 }
-

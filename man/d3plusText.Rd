@@ -10,4 +10,3 @@ d3plusText(d3plus, value = NULL, ...)
 Defines the text to be shown in shapes and tooltips.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#text}{d3plus wiki page}.
 }
-

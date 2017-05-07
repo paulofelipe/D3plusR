@@ -10,4 +10,3 @@ d3plusCoords(d3plus, value = NULL, ...)
 Function to pass topojson object to D3plus. It could be a loaded topojson file or a URL.
 See options: \href{https://github.com/alexandersimoes/d3plus/wiki/Visualizations#coords}{d3plus wiki page}.
 }
-

@@ -30,7 +30,7 @@ d3plus <- function(data = data,
                    id = NULL, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
                    currency_var = NULL, percent_var = NULL, locale = "en_US",
                    dictionary = NULL, width = NULL, height = NULL, elementId = NULL) {
-
+  
   settings = list(
     type = type,
     id = jsonlite::toJSON(id),
