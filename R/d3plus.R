@@ -16,6 +16,7 @@
 #' @param elementId a name for the visualization's id.
 #'
 #' @import htmlwidgets
+#' @import jsonlite
 #'
 #' @export
 #' 

@@ -8,6 +8,7 @@
 ## ---- message=FALSE, warning=FALSE---------------------------------------
 library(D3plusR)
 library(dplyr)
+library(jsonlite)
 data("trade_bra_chn")
 
 # Fake shares
@@ -66,10 +67,12 @@ d3plus(data = bra_exp_2015,
   d3plusSize(value = "Trade.Value..US..") %>% 
   d3plusLegend(value = TRUE, order = list(sort = "desc", value = "size")) %>% 
   d3plusColor("region") %>% 
-  d3plusDepth(1) %>% 
+  d3plusDepth(0) %>% 
   d3plusLabels(valign = "top") %>% 
-  d3plusUi(value = list(list(method = "color", value = c("region", "Trade.Value..US..")),
-                        list(method = "depth", value = c(0, 1))))
+  d3plusUi(value = list(list(method = "color",
+                             value = list(list(Region = "region"), list(Value = "Trade.Value..US.."))),
+                        list(method = "depth", type = "drop",
+                             value = list(list(Continent = 0), list(Country = 1)))))
 
 ## ------------------------------------------------------------------------
 mapa <- system.file("extdata", "countries.topojson", package = "D3plusR")
