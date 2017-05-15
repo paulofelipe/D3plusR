@@ -157,6 +157,11 @@ HTMLWidgets.widget({
           .focus(x.d3plusFocus);
         }
         
+        if(x.d3plusFont){
+          d3plus_viz
+          .font(x.d3plusFont);
+        }
+        
         if(x.d3plusUi){
           d3plus_viz
           .ui(x.d3plusUi);

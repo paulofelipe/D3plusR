@@ -85,8 +85,9 @@ d3 <- d3plus(data = bra_exp_2015,
        height = 500) %>% 
   d3plusCoords(mapa, projection = "equirectangular") %>% 
   d3plusColor(value = "Trade.Value..US..") %>% 
-  d3plusTooltip(value = c("Trade.Value..US..", "Partner")) %>% 
+  d3plusTooltip(value = c("Trade.Value..US..", "Partner.ISO")) %>% 
   d3plusLabels(FALSE) %>% 
+  d3plusText("Partner") %>% 
   d3plusTitle("Brazilian Exports Destinations") %>% 
   d3plusZoom(value = TRUE, scroll = FALSE) 
 
@@ -134,4 +135,18 @@ d3plus(data = sample_data, type = "network", id = "name",
   d3plusNodes(positions) %>% 
   d3plusEdges(value = connections, arrows = TRUE) %>% 
   d3plusSize("size")
+
+## ------------------------------------------------------------------------
+data("arg_exp_imp_2015")
+
+d3plus(type = "sankey", id = "id", height = 500, width = "100%") %>% 
+  d3plusNodes(value = nodes) %>% 
+  d3plusEdges(value = edges %>% filter(Trade_Value > 1e9), strength = "Trade_Value") %>% 
+  d3plusFocus(tooltip = FALSE, value = "Argentina") %>% 
+  d3plusAttrs(nodes) %>% 
+  d3plusLegend(FALSE) %>% 
+  d3plusSize(100) %>% 
+  d3plusTitle("Argentina - Imports and Exports Origins/Destinations") %>% 
+  d3plusTooltip("Trade_Value") %>% 
+  d3plusColor("color")
 

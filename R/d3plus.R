@@ -24,7 +24,7 @@
 #' 
 #' 
 
-d3plus <- function(data = data,
+d3plus <- function(data = NULL,
                    type = c("tree_map", "bar", "line", "scatter", "geo_map",
                             "stacked", "radar", "sankey", "rings", "network",
                             "box"),

@@ -3,6 +3,7 @@
 export(d3plus)
 export(d3plusActive)
 export(d3plusAggs)
+export(d3plusFont)
 export(d3plusAttrs)
 export(d3plusAxes)
 export(d3plusColor)
