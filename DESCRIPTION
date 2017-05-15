@@ -11,8 +11,10 @@ Maintainer: Paulo Alencar <paulofel2011@gmail.com>
 Description: A R interface for D3plus javascript library.
 Encoding: UTF-8
 License: MIT
+Depends:
+  jsonlite
 Imports:
-    htmlwidgets, jsonlite, magrittr
+    htmlwidgets, magrittr
 RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown
