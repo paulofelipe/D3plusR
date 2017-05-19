@@ -185,7 +185,8 @@ HTMLWidgets.widget({
           .format({"number": function(number, params){
             if (currency_var.indexOf(params.key) > - 1) {
               if (Math.abs(number) >= 2e9){
-                return currency + " " + d3plus.number.format(number/1e9, params) + " "  + number_text[4];
+                formatter = d3.locale(params.locale.format);
+                return currency + " " + formatter.numberFormat(",")(d3.round(number/1e9, 1)) + " "  + number_text[4];
               }
               else if(Math.abs(number) >= 1e9){
                 return currency + " "  + d3plus.number.format(number/1e9, params) + " "  + number_text[3];  
@@ -210,7 +211,7 @@ HTMLWidgets.widget({
               if(d3plus_number_format){
                 return d3plus.number.format(number, params);
               } else {
-                var formatter = d3.locale(params.locale.format);
+                formatter = d3.locale(params.locale.format);
                 return formatter.numberFormat(",")(number);
               }
             }
