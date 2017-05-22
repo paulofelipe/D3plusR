@@ -8,7 +8,9 @@
 #' @param currency a name indicating the currency symbol (US$, R$, etc.).
 #' @param number_text a name to show after the number. Example: c("K", "M", "M", "B", "B").
 #' @param currency_var a vector with variable names to apply the currency format.
+#' @param noformat_number_var a vector variables names to not apply any formatting. 
 #' @param percent_var a vector with variable names to apply the share format.
+#' @param d3plus_number_format a logical indicating if the d3plus.number.format should be applied to numbers.
 #' @param locale a name indicating the language to be used
 #' @param dictionary a named list. The element's name should be the original text and the value should be the new text.
 #' @param width a number (in pixels) or percent text ("100\%") indicating the visualization's width.
@@ -29,8 +31,10 @@ d3plus <- function(data = NULL,
                             "stacked", "radar", "sankey", "rings", "network",
                             "box"),
                    id = NULL, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
-                   currency_var = NULL, percent_var = NULL, locale = "en_US",
-                   dictionary = NULL, width = NULL, height = NULL, elementId = NULL) {
+                   currency_var = NULL, percent_var = NULL, noformat_number_var = NULL,
+                   d3plus_number_format = TRUE,
+                   locale = "en_US", dictionary = NULL, width = NULL,
+                   height = NULL, elementId = NULL) {
   
   settings = list(
     type = type,
@@ -40,6 +44,8 @@ d3plus <- function(data = NULL,
     number_text = number_text,
     currency_var = currency_var,
     percent_var = percent_var,
+    noformat_number_var = noformat_number_var,
+    d3plus_number_format = d3plus_number_format,
     locale = locale,
     dictionary = jsonlite::toJSON(dictionary)
   )

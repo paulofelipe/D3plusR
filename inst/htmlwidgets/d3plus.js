@@ -19,6 +19,8 @@ HTMLWidgets.widget({
         var number_text = x.settings.number_text;
         var currency_var = x.settings.currency_var;
         var percent_var = x.settings.percent_var;
+        var noformat_number_var = x.settings.noformat_number_var;
+        var d3plus_number_format = x.settings.d3plus_number_format;
         var locale = x.settings.locale;
         var dictionary = x.settings.dictionary;
         var newId = el.id;
@@ -175,11 +177,16 @@ HTMLWidgets.widget({
           percent_var = [];
         }
         
+        if(noformat_number_var === null){
+          noformat_number_var = [];
+        }
+        
           d3plus_viz
           .format({"number": function(number, params){
             if (currency_var.indexOf(params.key) > - 1) {
               if (Math.abs(number) >= 2e9){
-                return currency + " " + d3plus.number.format(number/1e9, params) + " "  + number_text[4];
+                formatter = d3.locale(params.locale.format);
+                return currency + " " + formatter.numberFormat(",")(d3.round(number/1e9, 1)) + " "  + number_text[4];
               }
               else if(Math.abs(number) >= 1e9){
                 return currency + " "  + d3plus.number.format(number/1e9, params) + " "  + number_text[3];  
@@ -194,12 +201,19 @@ HTMLWidgets.widget({
                 return currency + " "  + d3plus.number.format(number/1e3, params) + " "  + number_text[0];  
               }
               else {
-                return currency + " "  + number;  
+                return currency + " "  + d3plus.number.format(number, params);  
               }
             } else if(percent_var.indexOf(params.key) > - 1){
               return d3plus.number.format(number, params) + "%";
+            } else if(noformat_number_var.indexOf(params.key) > -1){
+                return number;
             } else {
-              return d3plus.number.format(number, params);
+              if(d3plus_number_format){
+                return d3plus.number.format(number, params);
+              } else {
+                formatter = d3.locale(params.locale.format);
+                return formatter.numberFormat(",")(number);
+              }
             }
           }});
           
