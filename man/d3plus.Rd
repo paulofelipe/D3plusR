@@ -4,7 +4,7 @@
 \alias{d3plus}
 \title{Create D3plus charts in R}
 \usage{
-d3plus(data = data, type = c("tree_map", "bar", "line", "scatter",
+d3plus(data = NULL, type = c("tree_map", "bar", "line", "scatter",
   "geo_map", "stacked", "radar", "sankey", "rings", "network", "box"),
   id = NULL, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
   currency_var = NULL, percent_var = NULL, locale = "en_US",
