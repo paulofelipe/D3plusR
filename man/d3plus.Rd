@@ -7,8 +7,9 @@
 d3plus(data = NULL, type = c("tree_map", "bar", "line", "scatter",
   "geo_map", "stacked", "radar", "sankey", "rings", "network", "box"),
   id = NULL, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
-  currency_var = NULL, percent_var = NULL, locale = "en_US",
-  dictionary = NULL, width = NULL, height = NULL, elementId = NULL)
+  currency_var = NULL, percent_var = NULL, noformat_number_var = NULL,
+  d3plus_number_format = TRUE, locale = "en_US", dictionary = NULL,
+  width = NULL, height = NULL, elementId = NULL)
 }
 \arguments{
 \item{data}{a data.frame object to create the visualization.}
@@ -24,6 +25,10 @@ d3plus(data = NULL, type = c("tree_map", "bar", "line", "scatter",
 \item{currency_var}{a vector with variable names to apply the currency format.}
 
 \item{percent_var}{a vector with variable names to apply the share format.}
+
+\item{noformat_number_var}{a vector variables names to not apply any formatting.}
+
+\item{d3plus_number_format}{a logical indicating if the d3plus.number.format should be applied to numbers.}
 
 \item{locale}{a name indicating the language to be used}
 
