@@ -29,7 +29,7 @@
 d3plus <- function(data = NULL,
                    type = c("tree_map", "bar", "line", "scatter", "geo_map",
                             "stacked", "radar", "sankey", "rings", "network",
-                            "box"),
+                            "box", "bubbles"),
                    id = NULL, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
                    currency_var = NULL, percent_var = NULL, noformat_number_var = NULL,
                    d3plus_number_format = TRUE,

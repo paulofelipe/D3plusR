@@ -5,11 +5,12 @@
 \title{Create D3plus charts in R}
 \usage{
 d3plus(data = NULL, type = c("tree_map", "bar", "line", "scatter",
-  "geo_map", "stacked", "radar", "sankey", "rings", "network", "box"),
-  id = NULL, currency = "US$", number_text = c("K", "M", "M", "B", "B"),
-  currency_var = NULL, percent_var = NULL, noformat_number_var = NULL,
-  d3plus_number_format = TRUE, locale = "en_US", dictionary = NULL,
-  width = NULL, height = NULL, elementId = NULL)
+  "geo_map", "stacked", "radar", "sankey", "rings", "network", "box",
+  "bubbles"), id = NULL, currency = "US$", number_text = c("K", "M", "M",
+  "B", "B"), currency_var = NULL, percent_var = NULL,
+  noformat_number_var = NULL, d3plus_number_format = TRUE,
+  locale = "en_US", dictionary = NULL, width = NULL, height = NULL,
+  elementId = NULL)
 }
 \arguments{
 \item{data}{a data.frame object to create the visualization.}
