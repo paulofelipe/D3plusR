@@ -12,7 +12,7 @@ HTMLWidgets.widget({
      return{
       renderValue: function(x){
         
-        var data = HTMLWidgets.dataframeToD3(x.data);
+        var data = x.data;
         var type = x.settings.type;
         var id = x.settings.id;
         var currency = x.settings.currency;

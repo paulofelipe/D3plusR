@@ -36,6 +36,7 @@ d3plus <- function(data = NULL,
                    locale = "en_US", dictionary = NULL, width = NULL,
                    height = NULL, elementId = NULL) {
   
+  
   settings = list(
     type = type,
     id = jsonlite::toJSON(id),
@@ -51,7 +52,7 @@ d3plus <- function(data = NULL,
   )
   # forward options using x
   x = list(
-    data = data,
+    data = jsonlite::toJSON(data, auto_unbox = T),
     settings = settings
   )
 
