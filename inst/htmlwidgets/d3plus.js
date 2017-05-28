@@ -26,12 +26,30 @@ HTMLWidgets.widget({
         var newId = el.id;
 
         d3plus_viz
-        .data(data)
         .type(type)
-        .id(id)
         .resize(true)
         .format({"locale": locale})
         .legend({"filters": true});
+        
+        if(data){
+          d3plus_viz
+          .data(data);
+        }
+        
+        if(x.d3plusData){
+          d3plus_viz
+          .data(x.d3plusData);
+        }
+        
+        if(id){
+          d3plus_viz
+          .id(id);
+        }
+        
+        if(x.d3plusId){
+          d3plus_viz
+          .id(x.d3plusId);
+        }
         
         if(x.d3plusAxisX){
           d3plus_viz
@@ -144,11 +162,6 @@ HTMLWidgets.widget({
           .cols(x.d3plusCols);
         }
         
-        if(x.d3plusId){
-          d3plus_viz
-          .id(x.d3plusId);
-        }
-        
         if(x.d3plusZoom){
           d3plus_viz
           .zoom(x.d3plusZoom);
@@ -179,6 +192,11 @@ HTMLWidgets.widget({
         
         if(noformat_number_var === null){
           noformat_number_var = [];
+        }
+        
+        if(x.d3plusFormat){
+          d3plus_viz
+          .format(x.d3plusFormat);
         }
         
           d3plus_viz
