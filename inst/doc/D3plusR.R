@@ -5,6 +5,11 @@
 #    d3plusX(value = "year") %>%
 #    d3plusY(value = "value")
 
+## ---- eval=FALSE---------------------------------------------------------
+#  d3plusAxes(ticks = FALSE,
+#             background = list(color = "#FFFFFF",
+#                               stroke = list(width = 0)))
+
 ## ---- message=FALSE, warning=FALSE---------------------------------------
 library(D3plusR)
 library(dplyr)
@@ -68,7 +73,7 @@ d3plus(data = bra_exp_2015,
   d3plusLegend(value = TRUE, order = list(sort = "desc", value = "size")) %>% 
   d3plusColor("region") %>% 
   d3plusDepth(0) %>% 
-  d3plusLabels(valign = "top") %>% 
+  d3plusLabels(value = TRUE, valign = "top") %>% 
   d3plusUi(value = list(list(method = "color",
                              value = list(list(Region = "region"), list(Value = "Trade.Value..US.."))),
                         list(method = "depth", type = "drop",
@@ -149,4 +154,100 @@ d3plus(type = "sankey", id = "id", height = 500, width = "100%") %>%
   d3plusTitle("Argentina - Imports and Exports Origins/Destinations") %>% 
   d3plusTooltip("Trade_Value") %>% 
   d3plusColor("color")
+
+## ---- eval = FALSE-------------------------------------------------------
+#  library(D3plusR)
+#  library(WDI)
+#  library(dplyr)
+#  library(htmlwidgets)
+#  
+#  gdp_per_capita <- WDI(country = 'all', indicator = "NY.GDP.PCAP.KD",
+#                        start = 1980, end = 2015, extra = TRUE)
+#  
+#  d3plus(data = gdp_per_capita %>% filter(year == 2015),
+#         type = "geo_map", id = "iso3c",
+#         currency = "US$",
+#         currency_var = "NY.GDP.PCAP.KD",
+#         elementId = "chart1",
+#         width = "100%",
+#         height = 500) %>%
+#    d3plusCoords('countries.topojson', projection = "equirectangular") %>%
+#    d3plusColor("NY.GDP.PCAP.KD") %>%
+#    d3plusTitle("GDP per capita (constant 2000 US$) - 2015") %>%
+#    d3plusLabels(FALSE) %>%
+#    d3plusText("country")
+#  
+#  d3plus(data = gdp_per_capita,
+#         type = "bar", id = "iso3c",
+#         currency = "US$",
+#         currency_var = "NY.GDP.PCAP.KD",
+#         elementId = "chart2",
+#         width = "100%",
+#         height = 300) %>%
+#    d3plusX("year") %>%
+#    d3plusY("NY.GDP.PCAP.KD") %>%
+#    d3plusId(solo = "USA") %>%
+#    d3plusTitle("GDP per capita (constant 2000 US$): United States") %>%
+#    d3plusColor("region", scale = "category10")
+#  
+#  
+#  onStaticRenderComplete('
+#                         var chart1 = HTMLWidgets.find("#chart1").viz;
+#                         var chart2 = HTMLWidgets.find("#chart2").viz;
+#  
+#                         chart1
+#                         .mouse({"click": function(d){
+#                          chart2
+#                          .id({"solo": [d.iso3c]})
+#                          .title("GDP per capita (constant 2000 US$): " + d.properties.name)
+#                          .draw();
+#                         }})')
+
+## ---- echo = FALSE, message=FALSE, warning=FALSE-------------------------
+library(D3plusR)
+library(WDI)
+library(dplyr)
+library(htmlwidgets)
+
+gdp_per_capita <- WDI(country = 'all', indicator = "NY.GDP.PCAP.KD",
+                      start = 1980, end = 2015, extra = TRUE)
+
+d3plus(data = gdp_per_capita %>% filter(year == 2015),
+       type = "geo_map", id = "iso3c",
+       currency = "US$",
+       currency_var = "NY.GDP.PCAP.KD",
+       elementId = "chart1",
+       width = "100%",
+       height = 500) %>% 
+  d3plusCoords('countries.topojson', projection = "equirectangular") %>% 
+  d3plusColor("NY.GDP.PCAP.KD") %>% 
+  d3plusTitle("GDP per capita (constant 2000 US$) - 2015") %>% 
+  d3plusLabels(FALSE) %>% 
+  d3plusText("country")
+
+d3plus(data = gdp_per_capita,
+       type = "bar",
+       currency = "US$",
+       currency_var = "NY.GDP.PCAP.KD",
+       elementId = "chart2",
+       width = "100%",
+       height = 300) %>% 
+  d3plusX("year") %>% 
+  d3plusY("NY.GDP.PCAP.KD") %>% 
+  d3plusId(value = "iso3c", solo = "USA") %>% 
+  d3plusTitle("GDP per capita (constant 2000 US$): United States") %>% 
+  d3plusColor("region", scale = "category10")
+
+
+onStaticRenderComplete('
+                       var chart1 = HTMLWidgets.find("#chart1").viz;
+                       var chart2 = HTMLWidgets.find("#chart2").viz;
+                       
+                       chart1
+                       .mouse({"click": function(d){
+                        chart2
+                        .id({"solo": [d.iso3c]})
+                        .title("GDP per capita (constant 2000 US$): " + d.properties.name)
+                        .draw();
+                       }})')
 

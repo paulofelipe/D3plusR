@@ -31,7 +31,7 @@ HTMLWidgets.widget({
         .format({"locale": locale})
         .legend({"filters": true});
         
-        if(data){
+        if(data.length){
           d3plus_viz
           .data(data);
         }
@@ -41,7 +41,7 @@ HTMLWidgets.widget({
           .data(x.d3plusData);
         }
         
-        if(id){
+        if(id.length){
           d3plus_viz
           .id(id);
         }
