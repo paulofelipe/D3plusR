@@ -1,7 +1,6 @@
-# D3plusR
+# D3plusR  
 
-
-A package to bring D3plus to R.
+A package to bring D3plus to R
 -------------------------------------------------------------
 
 ## About D3plus
@@ -13,8 +12,6 @@ A package to bring D3plus to R.
 D3plusR is a package created using the htmlwidgets framework. The methods available in the D3plus library have been converted to R functions. The initial options are available in the `d3plus ()` function. The other functions are directly linked to the methods. For example, the `d3plusSize()` function exists for the `.size()` (D3plus) method.
 
 ## Options
-
-Os autores do D3plus disponibilizaram [esta página](https://github.com/alexandersimoes/d3plus/wiki/Visualizations) com as opções disponíveis para cada método. Veja uma comparação entre o D3plus e o D3plusR.
 
 The authors of D3plus have made this [page available](https://github.com/alexandersimoes/d3plus/wiki/Visualizations) with the options for each method. 
 
