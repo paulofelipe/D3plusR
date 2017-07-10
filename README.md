@@ -7,7 +7,7 @@ A package to bring D3plus to R
 
 ## About D3plus
 
-[D3plus] (https://d3plus.org/) is a library built on top of [D3] (https://d3js.org/). The purpose of the library is to make visualization creation simple and easy. Please access the original D3plus project [at this link] (https://d3plus.org/) to learn more.
+[D3plus](https://d3plus.org/) is a library built on top of [D3](https://d3js.org/). The purpose of the library is to make visualization creation simple and easy. Please access the original D3plus project [at this link](https://d3plus.org/) to learn more.
 
 ## About D3plusR
 
@@ -15,7 +15,7 @@ D3plusR is a package created using the htmlwidgets framework. The methods availa
 
 ## Options
 
-The authors of D3plus have made this [page available](https://github.com/alexandersimoes/d3plus/wiki/Visualizations) with the options for each method. 
+The authors of D3plus have made this [page](https://github.com/alexandersimoes/d3plus/wiki/Visualizations) with the options for each method. 
 
 See a comparison between the D3plus and the D3plusR.
 
