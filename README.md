@@ -3,7 +3,7 @@
 A package to bring D3plus to R
 -------------------------------------------------------------
 
-![](https://raw.githubusercontent.com/paulofelipe/D3plusR/master/D3plusR.png =250x)
+![](D3plusR.png)
 
 ## About D3plus
 
