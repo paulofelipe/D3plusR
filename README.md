@@ -3,6 +3,8 @@
 A package to bring D3plus to R
 -------------------------------------------------------------
 
+![](D3plusR.png =250x)
+
 ## About D3plus
 
 [D3plus] (https://d3plus.org/) is a library built on top of [D3] (https://d3js.org/). The purpose of the library is to make visualization creation simple and easy. Please access the original D3plus project [at this link] (https://d3plus.org/) to learn more.
