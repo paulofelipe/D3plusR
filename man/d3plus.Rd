@@ -10,7 +10,7 @@ d3plus(data = NULL, type = c("tree_map", "bar", "line", "scatter",
   "B", "B"), currency_var = NULL, percent_var = NULL,
   noformat_number_var = NULL, d3plus_number_format = TRUE,
   locale = "en_US", dictionary = NULL, width = NULL, height = NULL,
-  elementId = NULL)
+  elementId = NULL, clean_previous = FALSE)
 }
 \arguments{
 \item{data}{a data.frame object to create the visualization.}
@@ -40,6 +40,8 @@ d3plus(data = NULL, type = c("tree_map", "bar", "line", "scatter",
 \item{height}{a number (in pixels) or percent text ("100\%") indicating the visualization's height.}
 
 \item{elementId}{a name for the visualization's id.}
+
+\item{clean_previous}{a logical indicating whether the visualization is restarted after input update (only for shiny).}
 }
 \description{
 A function to initialize a D3plus chart in R

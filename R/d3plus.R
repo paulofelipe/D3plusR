@@ -16,6 +16,7 @@
 #' @param width a number (in pixels) or percent text ("100\%") indicating the visualization's width.
 #' @param height a number (in pixels) or percent text ("100\%") indicating the visualization's height.
 #' @param elementId a name for the visualization's id.
+#' @param clean_previous a logical indicating whether the visualization is restarted after input update (only for shiny).
 #'
 #' @import htmlwidgets
 #' @import jsonlite
@@ -34,7 +35,8 @@ d3plus <- function(data = NULL,
                    currency_var = NULL, percent_var = NULL, noformat_number_var = NULL,
                    d3plus_number_format = TRUE,
                    locale = "en_US", dictionary = NULL, width = NULL,
-                   height = NULL, elementId = NULL) {
+                   height = NULL, elementId = NULL,
+                   clean_previous = FALSE) {
   
   
   settings = list(
@@ -48,6 +50,7 @@ d3plus <- function(data = NULL,
     noformat_number_var = noformat_number_var,
     d3plus_number_format = d3plus_number_format,
     locale = locale,
+    clean_previous = clean_previous,
     dictionary = jsonlite::toJSON(dictionary)
   )
   # forward options using x

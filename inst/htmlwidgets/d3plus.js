@@ -24,7 +24,13 @@ HTMLWidgets.widget({
         var locale = x.settings.locale;
         var dictionary = x.settings.dictionary;
         var newId = el.id;
-
+        
+        if(x.settings.clean_previous){
+          $("#" + el.id).empty();
+          d3plus_viz = d3plus.viz()
+          .container("#" + el.id);
+        }
+        
         d3plus_viz
         .type(type)
         .resize(true)
