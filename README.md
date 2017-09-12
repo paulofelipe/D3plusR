@@ -13,7 +13,7 @@ A package to bring D3plus to R
 
 D3plusR is a package created using the htmlwidgets framework. The methods available in the D3plus library have been converted to R functions. The initial options are available in the `d3plus ()` function. The other functions are directly linked to the methods. For example, the `d3plusSize()` function exists for the `.size()` (D3plus) method.
 
-## Instalation
+## Installation
 
 ```r
 devtools::install_github('paulofelipe/D3plusR')
