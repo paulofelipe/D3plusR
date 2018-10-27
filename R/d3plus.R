@@ -51,7 +51,7 @@ d3plus <- function(data = NULL,
     d3plus_number_format = d3plus_number_format,
     locale = locale,
     clean_previous = clean_previous,
-    dictionary = jsonlite::toJSON(dictionary)
+    dictionary = jsonlite::toJSON(dictionary, auto_unbox = T)
   )
   # forward options using x
   x = list(
