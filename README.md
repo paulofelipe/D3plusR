@@ -74,3 +74,5 @@ See more examples:
 vignette("D3plusR")
 ```
 
+## Tutorial in Portuguese
+https://paulofelipe.github.io/tutorial_d3plusr/
