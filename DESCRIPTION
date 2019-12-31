@@ -10,12 +10,12 @@ Authors@R: as.person(c(
 Maintainer: Paulo Alencar <paulofel2011@gmail.com>
 Description: A R interface for D3plus javascript library.
 Encoding: UTF-8
-License: MIT
+License: MIT + file LICENSE
 Depends:
   jsonlite
 Imports:
     htmlwidgets, magrittr
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr

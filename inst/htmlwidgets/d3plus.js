@@ -87,6 +87,11 @@ HTMLWidgets.widget({
           .color(x.d3plusColor);
         }
         
+        if(x.d3plusOrder){
+          d3plus_viz
+          .order(x.d3plusOrder);
+        }
+        
         if(x.d3plusIcon){
           d3plus_viz
           .icon(x.d3plusIcon);
