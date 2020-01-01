@@ -238,7 +238,26 @@ HTMLWidgets.widget({
                 return number;
             } else {
               if(d3plus_number_format){
-                return d3plus.number.format(number, params);
+                /*return d3plus.number.format(number, params); */
+                if (Math.abs(number) >= 2e9){
+                  formatter = d3.locale(params.locale.format);
+                  return currency + " " + formatter.numberFormat(",")(d3.round(number/1e9, 1)) + " "  + number_text[4];
+                }
+                else if(Math.abs(number) >= 1e9){
+                  return d3plus.number.format(number/1e9, params) + " "  + number_text[3];  
+                }
+                else if (Math.abs(number) >= 2e6){
+                  return d3plus.number.format(number/1e6, params) + " "  + number_text[2];  
+                }
+                else if(Math.abs(number) >= 1e6){
+                  return d3plus.number.format(number/1e6, params) + " "  + number_text[1];  
+                }
+                else if(Math.abs(number) >= 1e3){
+                  return d3plus.number.format(number/1e3, params) + " "  + number_text[0];  
+                }
+                else {
+                  return d3plus.number.format(number, params);  
+                }
               } else {
                 formatter = d3.locale(params.locale.format);
                 return formatter.numberFormat(",")(number);
